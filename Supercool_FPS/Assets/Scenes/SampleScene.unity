@@ -6266,6 +6266,51 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: -8720650912592627520, guid: e75d3d4c5f8c9a5478e3b2dba59fa41a, type: 3}
+--- !u!1 &551114584
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 551114585}
+  - component: {fileID: 551114586}
+  m_Layer: 0
+  m_Name: Time_Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &551114585
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 551114584}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &551114586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 551114584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3e451bd80acdc94693d65d15a6b42c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetScale: 0
+  restoreRate: 10
 --- !u!1 &560094777 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1936627778743026507, guid: e75d3d4c5f8c9a5478e3b2dba59fa41a,
@@ -7267,9 +7312,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7062e843d911567449ff64141ef9366b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myDelta: 0
-  myFixedDelta: 0
-  myTimeScale: 0.2
 --- !u!114 &838696117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7282,9 +7324,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8500f30ff64189540a8af0f3ff8d9b13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: {fileID: 0}
-  targetScale: 0
-  lerpSpeed: 0
 --- !u!1001 &858440330
 PrefabInstance:
   m_ObjectHideFlags: 0
