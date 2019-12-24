@@ -24,11 +24,11 @@ public class Bullet : MonoBehaviour
     Vector3 shootDir = new Vector3(0f,0f,-1f);
 
     public RaycastHit rayhit;
-   
-
+    int ignoreEnemyDetectLayer = 1 << 9;
 
     void Start()
     {
+        ignoreEnemyDetectLayer = ~ignoreEnemyDetectLayer;
         death = GameObject.FindGameObjectWithTag("Player").GetComponent<Death>();
         t = 0;
     }
@@ -44,7 +44,7 @@ public class Bullet : MonoBehaviour
             Vector3 camcenter = fps.ScreenToWorldPoint(new Vector3(Screen.width / 2, Screen.height / 2, 0f));
 
             RaycastHit rayhit;
-            if (Physics.Raycast(camcenter, fps.transform.forward, out rayhit, range))
+            if (Physics.Raycast(camcenter, fps.transform.forward, out rayhit, range, ignoreEnemyDetectLayer))
             {
                 bulletpath = (rayhit.point - muzzPos.transform.position);
                 Debug.Log("path =" + bulletpath);
@@ -76,5 +76,7 @@ public class Bullet : MonoBehaviour
        if ((Time.time - t) >= 0.3)
           muzzleSmoke.SetActive(false);
     }
+
+    
 
 }
