@@ -10,7 +10,7 @@ public class EnemyAI : MonoBehaviour
     float fireRate=0.2f;
     Vector3 playerPos;
     Vector3 passPos;
-    float speed = 16f;
+    float speed = 10f;
     public GameObject muzzFlash;
 
     Animator anim;

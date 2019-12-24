@@ -147,6 +147,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae354e721c04d3448b3560f2d7c74eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathParticle: {fileID: 1936931546403855469, guid: a7b2790bd75f53545bf640e80a71bc59,
+    type: 3}
   speed: 10
   damage: 0
   hitforce: 0

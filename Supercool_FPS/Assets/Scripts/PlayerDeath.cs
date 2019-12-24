@@ -18,11 +18,11 @@ public class PlayerDeath : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        
         if(collision.gameObject.CompareTag("Player"))
         {
             Debug.Log("GameOver");
             Destroy(this.gameObject);
         }
-        
     }
 }

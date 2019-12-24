@@ -5,6 +5,7 @@ using UnityEngine;
 public class BulletSpawned : MonoBehaviour
 {
     Rigidbody rb;
+    public GameObject deathParticle;
 
     public float speed;
     Camera cam;
@@ -31,6 +32,7 @@ public class BulletSpawned : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
+            Instantiate(deathParticle,transform.position,transform.rotation);
             collision.gameObject.GetComponentInParent<Death>().die();
             Debug.Log("LeftLeg");
             collision.gameObject.GetComponent<Rigidbody>().AddForceAtPosition(rb.velocity.normalized * 60f, collision.transform.position, ForceMode.Impulse);
