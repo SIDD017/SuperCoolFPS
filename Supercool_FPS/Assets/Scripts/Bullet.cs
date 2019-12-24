@@ -5,6 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     Death death;
+    TimeManager manager;
 
     public Vector3 bulletpath;
     public float speed;
@@ -28,6 +29,7 @@ public class Bullet : MonoBehaviour
 
     void Start()
     {
+        manager = FindObjectOfType<TimeManager>();
         ignoreEnemyDetectLayer = ~ignoreEnemyDetectLayer;
         death = GameObject.FindGameObjectWithTag("Player").GetComponent<Death>();
         t = 0;
@@ -47,12 +49,12 @@ public class Bullet : MonoBehaviour
             if (Physics.Raycast(camcenter, fps.transform.forward, out rayhit, range, ignoreEnemyDetectLayer))
             {
                 bulletpath = (rayhit.point - muzzPos.transform.position);
-                Debug.Log("path =" + bulletpath);
+                //Debug.Log("path =" + bulletpath);
             }
             else
             {
                 bulletpath = ((camcenter+(fps.transform.forward.normalized*range)) - muzzPos.transform.position);
-                Debug.Log("No path =" + bulletpath);
+                //Debug.Log("No path =" + bulletpath);
             }
             muzzleFlash.SetActive(true);
 
@@ -63,6 +65,7 @@ public class Bullet : MonoBehaviour
             GameObject bt=Instantiate(bullet, muzzPos.transform.position, muzzPos.transform.rotation);
             bt.GetComponent<Rigidbody>().velocity = bulletpath.normalized * speed;
             bt.GetComponent<Rigidbody>().isKinematic = false;
+            manager.EventTrigger();
         }
         
         

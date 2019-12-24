@@ -69,7 +69,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.3
+  m_Time: 0.6
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -86,7 +86,7 @@ TrailRenderer:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.44262695
+        time: 1
         value: 0
         inSlope: 0
         outSlope: 0
@@ -182,7 +182,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 12c1023c56352994bbb0061ecf950701,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.213
+      value: 0.966
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 12c1023c56352994bbb0061ecf950701,
         type: 3}

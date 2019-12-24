@@ -25,11 +25,13 @@ public class Death : MonoBehaviour
 
     public void die()
     {
+        manager.EventTrigger();
         this.gameObject.GetComponent<Animator>().enabled = false;
         Rigid(false);
         Collidor(true);
         if(this.gameObject.GetComponentInChildren<GunScript>() != null)
         this.gameObject.GetComponentInChildren<GunScript>().Release();
+        //GetComponent<EnableShatter>().Destruct();
        // manager.Slowdowntime();
     }
 

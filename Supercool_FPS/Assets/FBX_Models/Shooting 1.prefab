@@ -1542,8 +1542,9 @@ GameObject:
   - component: {fileID: 3935097314234976136}
   - component: {fileID: 6906208191832985312}
   - component: {fileID: 2513845571930322734}
+  - component: {fileID: 2872916281248215380}
   m_Layer: 9
-  m_Name: Shooting
+  m_Name: Shooting 1
   m_TagString: MainEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1624,6 +1625,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 15, y: 4, z: 15}
   m_Center: {x: 0, y: 1.25, z: 1.2}
+--- !u!114 &2872916281248215380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5025361045650404697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d90f67c6a6b0ea4fb7f0b637322f7f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rigged: {fileID: 50408743209482076, guid: 0880568bff57a5f4e9cda645596e6c4b, type: 3}
 --- !u!1 &5735842487086549565
 GameObject:
   m_ObjectHideFlags: 0

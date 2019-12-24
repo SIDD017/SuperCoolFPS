@@ -10,6 +10,7 @@ public class TimeManager : MonoBehaviour
     float delta;
     float lerpSpeed;
     float t = 0.2f;
+    bool eventtime  = false;
 
     // Start is called before the first frame update
     void Start()
@@ -29,11 +30,18 @@ public class TimeManager : MonoBehaviour
             lerpSpeed = 200;
            
         }
+
+        else if(eventtime)
+        {
+            targetScale = 0.36f;
+            lerpSpeed = 200;
+
+        }
+
         else if (mouseX != 0f || mouseY != 0f)
         {
-            targetScale = 0.5f;
+            targetScale = 0.25f;
             lerpSpeed = 200;
-           
         }
 
         else
@@ -44,6 +52,19 @@ public class TimeManager : MonoBehaviour
         }
         t = Mathf.Lerp(t, targetScale, Time.deltaTime * lerpSpeed);
         Slowdowntime(t);
+    }
+
+    public void EventTrigger()
+    {
+        Debug.Log("Success");
+        StartCoroutine(EventTime());
+    }
+
+    public IEnumerator EventTime()
+    {
+        eventtime = true;
+        yield return new WaitForSeconds(0.16f);
+        eventtime = false;
     }
 
     public void Slowdowntime(float scale)
