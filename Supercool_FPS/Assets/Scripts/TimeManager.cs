@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TimeManager : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class TimeManager : MonoBehaviour
     float lerpSpeed;
     float t = 0.2f;
     bool eventtime  = false;
+    public bool playerdeath = false;
 
     // Start is called before the first frame update
     void Start()
@@ -24,25 +26,33 @@ public class TimeManager : MonoBehaviour
     {
         float mouseX = Input.GetAxis("Mouse X");
         float mouseY = Input.GetAxis("Mouse Y");
-        if (Input.anyKey)
+        if (Input.anyKey && !playerdeath)
         {
             targetScale = 1f;
             lerpSpeed = 200;
            
         }
 
+        else if (playerdeath)
+        {
+            targetScale = 0.05f;
+            lerpSpeed = 200;
+        }
+
         else if(eventtime)
         {
-            targetScale = 0.36f;
+            targetScale = 0.5f;
             lerpSpeed = 200;
 
         }
 
-        else if (mouseX != 0f || mouseY != 0f)
+        else if ((mouseX != 0f || mouseY != 0f) && !playerdeath)
         {
-            targetScale = 0.25f;
+            targetScale = 0.35f;
             lerpSpeed = 200;
         }
+
+       
 
         else
         {
@@ -60,7 +70,7 @@ public class TimeManager : MonoBehaviour
         StartCoroutine(EventTime());
     }
 
-    public IEnumerator EventTime()
+    IEnumerator EventTime()
     {
         eventtime = true;
         yield return new WaitForSeconds(0.16f);
@@ -72,4 +82,5 @@ public class TimeManager : MonoBehaviour
         Time.timeScale = scale;
         Time.fixedDeltaTime = fixedDelta * scale;
     }
+
 }

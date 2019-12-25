@@ -27,7 +27,7 @@ public class Shell : MonoBehaviour
         rb = GetComponent<Rigidbody>();
 
         expelDir = new Vector3(Random.Range(50f, 100f), Random.Range(50f, 100f), 10f);
-        rb.AddRelativeForce((bullet.muzzShellPos.transform.position + expelDir));
+        rb.AddForce((bullet.muzzShellPos.transform.position + expelDir));
         t = Time.time;
     }
     // Update is called once per frame

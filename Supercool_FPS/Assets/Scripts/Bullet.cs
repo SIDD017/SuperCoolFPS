@@ -57,7 +57,6 @@ public class Bullet : MonoBehaviour
                 //Debug.Log("No path =" + bulletpath);
             }
             muzzleFlash.SetActive(true);
-
             
 
             t = Time.time;
@@ -72,12 +71,12 @@ public class Bullet : MonoBehaviour
 
         if ((Time.time - t) >= 0.025)
         {
-          muzzleSmoke.SetActive(true);
+         // muzzleSmoke.SetActive(true);
             muzzleFlash.SetActive(false);
         }
          
-       if ((Time.time - t) >= 0.3)
-          muzzleSmoke.SetActive(false);
+      /* if ((Time.time - t) >= 0.3)
+          muzzleSmoke.SetActive(false);*/
     }
 
     
