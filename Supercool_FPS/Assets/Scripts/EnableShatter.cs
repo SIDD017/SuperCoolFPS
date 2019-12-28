@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnableShatter : MonoBehaviour
+public class EnableShatter : MonoBehaviour   /*THIS SCRIPT IS CURRENTLY NOT ATTACHED TO ANYTHING HENCE NOT IN USE
+                                               USE THIS SCRIPTTO REPLACE ENEMY MODEL WITH A SHATTERED ENEMY MODEL*/
 {
     public GameObject rigged;
 

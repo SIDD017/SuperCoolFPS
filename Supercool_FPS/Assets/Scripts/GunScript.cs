@@ -21,13 +21,13 @@ public class GunScript : MonoBehaviour
         
     }
 
-    public void Release()
+    public void Release()             
     {
-        transform.parent = null;
-        Throw(false);
+        transform.parent = null;     //CLEARS PARENT OF THE GUN FROM ENEMY OBJECT
+        Throw(false);                //ENABLES COLLIDER AND RIGIDODY ON GUN WHEN RELEASED BY ENEMY
     }
 
-    void Throw(bool state)
+    void Throw(bool state)          
     {
         rb.isKinematic = state;
         col.enabled = !state;

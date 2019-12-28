@@ -28,10 +28,10 @@ public class PlayerDeath : MonoBehaviour
         {
             FindObjectOfType<GameOver>().playerDead = true;
             FindObjectOfType<TimeManager>().playerdeath = true;
-            collision.gameObject.GetComponent<CharacterController>().enabled = false;
-            collision.gameObject.GetComponent<AudioSource>().enabled = false;
-            collision.gameObject.GetComponent<Bullet>().enabled = false;
-            collision.gameObject.GetComponentInChildren<Camera>().transform.DetachChildren();
+            collision.gameObject.GetComponent<CharacterController>().enabled = false;     //DISABLE CHARACTER CONTROLLER
+            collision.gameObject.GetComponent<AudioSource>().enabled = false;             //DISABLE FOOTSTEPS AUDIO SOURCE
+            collision.gameObject.GetComponent<Bullet>().enabled = false;                  //DISABLE BULLET SCRIPT
+            collision.gameObject.GetComponentInChildren<Camera>().transform.DetachChildren();   //ALL CHILDREN OF THE CHARACTER CONTROLLER ARE SEPERATED
             Debug.Log("GameOver");
             Destroy(this.gameObject);
         }

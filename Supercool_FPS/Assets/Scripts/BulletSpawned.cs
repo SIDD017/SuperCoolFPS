@@ -30,16 +30,17 @@ public class BulletSpawned : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Enemy"))                      //IF BULLET HITS ENEMY
         {
-            Instantiate(deathParticle,transform.position,transform.rotation);
-            collision.gameObject.GetComponentInParent<Death>().die();
-            Debug.Log("LeftLeg");
-            collision.gameObject.GetComponent<Rigidbody>().AddForceAtPosition(rb.velocity.normalized * 60f, collision.transform.position, ForceMode.Impulse);
-            Destroy(this.gameObject);
+            Instantiate(deathParticle,transform.position,transform.rotation);         //INSTANTIATES ENEMYDEATH PARTICLE SYSTEM
+            collision.gameObject.GetComponentInParent<Death>().die();                 //CALLS DIE FUNCTION IN DEATH SCRIPT ATTACHED TO THE ENEMY OBJECT
+            //Debug.Log("LeftLeg");
+            collision.gameObject.GetComponent<Rigidbody>().AddForceAtPosition(rb.velocity.normalized * 60f, collision.transform.position, ForceMode.Impulse);  /*ADDS AN IMPULSE TO THE ENEMY RAGDOLL 
+                                                                                                                                                                 AT THE POINT THE BULLET HITS THE ENEMY*/
+            Destroy(this.gameObject);                       //DESTROYS BULLET
         }
 
-        Destroy(this.gameObject);
+        Destroy(this.gameObject);                           //DESTROYS BULLET IF IT DID NOT COLLIDE WITH ENEMY BUT WITH ANY OTHER COLLIDER IN THE SCENE
     }
 
 }

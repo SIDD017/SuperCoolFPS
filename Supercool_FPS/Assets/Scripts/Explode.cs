@@ -20,7 +20,7 @@ public class Explode : MonoBehaviour
         
     }
 
-    public void Shatter()
+    public void Shatter()     //ADDS AN EXPLOSIVE FORCE TO EVERY OBJECT OF THE ENEMY SHATTERED MESH
     {
 
         foreach (Transform t in transform)
@@ -28,7 +28,7 @@ public class Explode : MonoBehaviour
             Rigidbody rb = t.GetComponent<Rigidbody>();
 
             if (rb != null)
-                rb.AddExplosionForce(Random.Range(minForce, maxForce), transform.position, radius);
+                rb.AddExplosionForce(Random.Range(minForce, maxForce), transform.position, radius); 
         }
     }
 }
