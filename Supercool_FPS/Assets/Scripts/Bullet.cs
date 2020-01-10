@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class Bullet : MonoBehaviour
 {
@@ -35,12 +36,9 @@ public class Bullet : MonoBehaviour
         t = 0;
     }
 
-
-
     void Update()
     {
-        
-        if (Input.GetButtonDown("Fire1"))                         
+        if (CrossPlatformInputManager.GetButtonDown("Fire1"))                         
         {
             Vector3 bulletpath;
             Vector3 camcenter = fps.ScreenToWorldPoint(new Vector3(Screen.width / 2, Screen.height / 2, 0f));   //TO GET CENTER POSITION OF CAMERA IN WORLDSPACE
@@ -49,12 +47,10 @@ public class Bullet : MonoBehaviour
             if (Physics.Raycast(camcenter, fps.transform.forward, out rayhit, range, ignoreEnemyDetectLayer))
             {
                 bulletpath = (rayhit.point - muzzPos.transform.position);                                      //CALCULATES THE VECTOR FROM GUN MUZZLE TO THE OBJECT THE RAYCAST HITS
-                //Debug.Log("path =" + bulletpath);
             }
             else
             {
                 bulletpath = ((camcenter+(fps.transform.forward.normalized*range)) - muzzPos.transform.position);   //IF NO OBJECT FOUND BY RAYCAST THEN BULLETPATH CALULATED FOR SPECIFIED RANGE
-                //Debug.Log("No path =" + bulletpath);
             }
             muzzleFlash.SetActive(true);                                                            //SETS THE MUZZLEFLASH PARTICLE SYSTEM ACTIVE
             

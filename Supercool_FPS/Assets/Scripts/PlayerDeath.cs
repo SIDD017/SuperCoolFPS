@@ -23,8 +23,8 @@ public class PlayerDeath : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        
-        if(collision.gameObject.CompareTag("Player"))
+
+        if (collision.gameObject.CompareTag("Player"))
         {
             FindObjectOfType<GameOver>().playerDead = true;
             FindObjectOfType<TimeManager>().playerdeath = true;
@@ -35,6 +35,8 @@ public class PlayerDeath : MonoBehaviour
             Debug.Log("GameOver");
             Destroy(this.gameObject);
         }
+        else if (!collision.gameObject.CompareTag("Enemy") && !collision.gameObject.CompareTag("MainEnemy") && !collision.gameObject.CompareTag("Gun"))
+            Destroy(this.gameObject);
     }
 
 }

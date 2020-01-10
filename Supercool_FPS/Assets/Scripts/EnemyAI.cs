@@ -16,14 +16,12 @@ public class EnemyAI : MonoBehaviour
     Animator anim;
     float t;
 
-    // Start is called before the first frame update
     void Start()
     {
         anim = this.GetComponent<Animator>();
-        player = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.FindGameObjectWithTag("Player Target");
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (GetComponent<Animator>().enabled == true)

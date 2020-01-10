@@ -10,18 +10,11 @@ public class Shell : MonoBehaviour
     float t;
     GameObject b;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-       
-    }
-
     private void Awake()                                                        //CALLED WHRN BULLET SHELL INSTANTIATED
     {
         b = GameObject.FindGameObjectWithTag("Player");                        //GETTING THE PLAYER OBJECT   
         if (b != null)
         {
-            //Debug.Log("FFFFFFFUCK");
             bullet = b.GetComponent<Bullet>();                                 //GETTING THE BULLET SCRIPT TO ACCESS MUZZLESHELL OBJECT(BULLET SHELLS INSTANTIATE AT THE MUZZLESHELL OBJECT POSITION)
         }
         rb = GetComponent<Rigidbody>();
@@ -30,7 +23,7 @@ public class Shell : MonoBehaviour
         rb.AddForce((bullet.muzzShellPos.transform.position + expelDir));           // FORCE WITH WHICH BULLET SHELL IS EXPELLED FORM GUN
         t = Time.time;                                                             //TIME AT WHICH BULLET IS EXPELLED
     }
-    // Update is called once per frame
+
     void Update()
     {
         if ((Time.time - t) >= 5)

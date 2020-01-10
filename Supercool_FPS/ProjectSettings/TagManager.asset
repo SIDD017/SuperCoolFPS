@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - MainEnemy
   - Gun
+  - Player Target
   layers:
   - Default
   - TransparentFX

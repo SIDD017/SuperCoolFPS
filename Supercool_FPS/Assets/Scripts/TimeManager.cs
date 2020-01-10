@@ -14,14 +14,12 @@ public class TimeManager : MonoBehaviour
     bool eventtime  = false;
     public bool playerdeath = false;
 
-    // Start is called before the first frame update
     void Start()
     {
         delta = Time.deltaTime;
         fixedDelta = Time.fixedDeltaTime;
     }
 
-    // Update is called once per frame
     void Update()
     {
         float mouseX = Input.GetAxis("Mouse X");
@@ -48,7 +46,7 @@ public class TimeManager : MonoBehaviour
 
         else if ((mouseX != 0f || mouseY != 0f) && !playerdeath)   //EXECUTED IF PLYER MOVES THE CAMERA USING MOUSE
         {
-            targetScale = 0.35f;
+            targetScale = 0.2f;
             lerpSpeed = 200;
         }
 

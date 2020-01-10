@@ -38,7 +38,7 @@ public class GameOver : MonoBehaviour
         tempColor = normalColorFilter;                      //INITIAL COLOR VALUE = NORMAL COLOR VALUE
         co.colorFilter.value = tempColor;                   //SETTING INITIAL COLOR FILTER VALUE
         tempTextAlpha = initialTextAlpha;                   //INITIAL VALUE FOR ALPHA CHANNEL OF TEXT COLOR
-        crosshair.enabled = true;                           //INITIALLY UI ELEMENT CROSSHAIR ENABLED
+       // crosshair.enabled = true;                           //INITIALLY UI ELEMENT CROSSHAIR ENABLED
     } 
 
     // Update is called once per frame
