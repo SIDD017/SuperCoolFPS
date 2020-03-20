@@ -1,12 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering.PostProcessing;
+//using UnityEngine.Rendering.PostProcessing;
 
 public class PlayerDeath : MonoBehaviour
 {
-    public PostProcessProfile gameMenu;
-    ColorGrading co;
+    /*public PostProcessProfile gameMenu;
+    ColorGrading co;*/
 
     float coValue;
 
@@ -26,7 +26,7 @@ public class PlayerDeath : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Player"))
         {
-            FindObjectOfType<GameOver>().playerDead = true;
+            FindObjectOfType<UIManager>().GameOverScreen();
             FindObjectOfType<TimeManager>().playerdeath = true;
             collision.gameObject.GetComponent<CharacterController>().enabled = false;     //DISABLE CHARACTER CONTROLLER
             collision.gameObject.GetComponent<AudioSource>().enabled = false;             //DISABLE FOOTSTEPS AUDIO SOURCE

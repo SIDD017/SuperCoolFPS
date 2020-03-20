@@ -6,14 +6,20 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Preload.unity
+    guid: a3e592778e94d0d4280a1ac2e62e0549
+  - enabled: 1
     path: Assets/Scenes/Test_Level android.unity
     guid: 41ed0d16cd3a303439326be6212f6f08
+  - enabled: 1
+    path: Assets/Scenes/2nd_Level.unity
+    guid: 85d160e8654cd084ead3173cfd2af22a
   - enabled: 0
     path: Assets/Scenes/Mechanics Test.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 0
-    path: Assets/Scenes/New Scene.unity
-    guid: 9272f7897ec61f549bcebc80bc62e831
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 0
     path: Assets/Scenes/Test_Level.unity
     guid: 8c6ad65b42fceb146a5b219b8a245419

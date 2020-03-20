@@ -1539,7 +1539,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8351629629559473994}
   - component: {fileID: 2120334677000694320}
-  - component: {fileID: 3935097314234976136}
   - component: {fileID: 6906208191832985312}
   - component: {fileID: 2513845571930322734}
   - component: {fileID: 2872916281248215380}
@@ -1585,18 +1584,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &3935097314234976136
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5025361045650404697}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b128eb2146cdc7f43a0250d65bb31a08, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &6906208191832985312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1609,6 +1596,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a341ed28ec9aaea4ab5fcdbe6e966f62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uimanager: {fileID: 1885516140827819577, guid: 56560b0c032011748ada700de4847606,
+    type: 3}
+  deathParticleEffect: {fileID: 0}
   muzzlePos: {fileID: 3292006624541774995}
   bullet: {fileID: 3701898596663563210, guid: 8e5ec9154c232bf4987cb4504bbaa1de, type: 3}
   muzzFlash: {fileID: 3292006625336874044}

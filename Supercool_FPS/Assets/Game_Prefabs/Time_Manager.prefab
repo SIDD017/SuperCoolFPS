@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7431722981945092352}
   - component: {fileID: 7431722981945092355}
-  - component: {fileID: 7431722981945092354}
   m_Layer: 0
   m_Name: Time_Manager
   m_TagString: Untagged
@@ -47,29 +46,3 @@ MonoBehaviour:
   targetScale: 0
   restoreRate: 10
   playerdeath: 0
---- !u!114 &7431722981945092354
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7431722981945092353}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aec86aca76784e24cb057bae15b65ab3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameMenu: {fileID: 11400000, guid: 26b3518c313b6b0418ec38e1d251a597, type: 2}
-  playerDead: 0
-  normalColorFilter: {r: 1, g: 1, b: 1, a: 0}
-  deadColorFilter: {r: 1, g: 0.3726415, b: 0.3726415, a: 0}
-  gameOverScreen: {fileID: 3403506838485004560, guid: 07598b2959550234a82f42659ba19876,
-    type: 3}
-  buttons:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  initialTextAlpha: {r: 0, g: 0, b: 0, a: 0}
-  finalTextAlpha: {r: 0, g: 0, b: 0, a: 1}
-  crosshair: {fileID: 0}

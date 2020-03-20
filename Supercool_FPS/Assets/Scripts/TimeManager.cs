@@ -24,47 +24,42 @@ public class TimeManager : MonoBehaviour
     {
         float mouseX = Input.GetAxis("Mouse X");
         float mouseY = Input.GetAxis("Mouse Y");
-        if (Input.anyKey && !playerdeath)                     //ANY KEY PRESSED AND IS THE PLAYER STILL ALIVE
-        {
-            targetScale = 1f;
-            lerpSpeed = 200;
-           
-        }
+            if (Input.anyKey && !playerdeath)                     //ANY KEY PRESSED AND IS THE PLAYER STILL ALIVE
+            {
+                targetScale = 1f;
+                lerpSpeed = 200;
+            }
 
-        else if (playerdeath)                                //EXECUTED IF PLAYER DIES
-        {
-            targetScale = 0.05f;
-            lerpSpeed = 200;
-        }
+            else if (playerdeath)                                //EXECUTED IF PLAYER DIES
+            {
+                targetScale = 0.05f;
+                lerpSpeed = 200;
+            }
 
-        else if(eventtime)                                   //EXECUTED ON EVENTS OF PLAYER SHOOTING OR ENEMY DEATH
-        {
-            targetScale = 0.5f;
-            lerpSpeed = 200;
+            else if (eventtime)                                   //EXECUTED ON EVENTS OF PLAYER SHOOTING OR ENEMY DEATH
+            {
+                targetScale = 0.5f;
+                lerpSpeed = 200;
+            }
 
-        }
+            /*else if ((mouseX != 0f || mouseY != 0f) && !playerdeath)   //EXECUTED IF PLYER MOVES THE CAMERA USING MOUSE
+            {
+                targetScale = 0.2f;
+                lerpSpeed = 200;
+            }*/
 
-        else if ((mouseX != 0f || mouseY != 0f) && !playerdeath)   //EXECUTED IF PLYER MOVES THE CAMERA USING MOUSE
-        {
-            targetScale = 0.2f;
-            lerpSpeed = 200;
-        }
-
-       
-
-        else                                                 //TIMESCALE LERPS TO ZERO IF NO ACTIVITY
-        {
-            targetScale = 0;
-            lerpSpeed = 10;
-            
-        }
-        t = Mathf.Lerp(t, targetScale, Time.deltaTime * lerpSpeed);   //LINEAR INTERPOLATION BETWEEN TIMESCALE VALUES
-        Slowdowntime(t);
+            else                                                 //TIMESCALE LERPS TO ZERO IF NO ACTIVITY
+            {
+                targetScale = 0;
+                lerpSpeed = 10;
+            }
+            t = Mathf.Lerp(t, targetScale, Time.deltaTime * lerpSpeed);   //LINEAR INTERPOLATION BETWEEN TIMESCALE VALUES
+            Slowdowntime(t);
+        
     }
 
     public void EventTrigger()               
     {
-        Debug.Log("Success");
         StartCoroutine(EventTime());
     }
 

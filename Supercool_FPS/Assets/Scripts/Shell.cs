@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Shell : MonoBehaviour
 {
+    AudioSource casingImpact;
     Bullet bullet;
     Vector3 expelDir;
     public Rigidbody rb;
@@ -12,6 +13,7 @@ public class Shell : MonoBehaviour
 
     private void Awake()                                                        //CALLED WHRN BULLET SHELL INSTANTIATED
     {
+        casingImpact = GetComponent<AudioSource>();
         b = GameObject.FindGameObjectWithTag("Player");                        //GETTING THE PLAYER OBJECT   
         if (b != null)
         {
@@ -26,7 +28,13 @@ public class Shell : MonoBehaviour
 
     void Update()
     {
+
         if ((Time.time - t) >= 5)
             Destroy(this.gameObject);                                             //DESTROYS BULLET OBJECT WHEN TIME>5SECONDS SINCE INSTANTIATION
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        casingImpact.Play();
     }
 }

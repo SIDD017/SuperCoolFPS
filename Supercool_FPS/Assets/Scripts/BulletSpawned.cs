@@ -33,7 +33,7 @@ public class BulletSpawned : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))                      //IF BULLET HITS ENEMY
         {
             Instantiate(deathParticle,transform.position,transform.rotation);         //INSTANTIATES ENEMYDEATH PARTICLE SYSTEM
-            collision.gameObject.GetComponentInParent<Death>().die();                 //CALLS DIE FUNCTION IN DEATH SCRIPT ATTACHED TO THE ENEMY OBJECT
+            collision.gameObject.GetComponentInParent<EnemyAI>().die();                 //CALLS DIE FUNCTION IN DEATH SCRIPT ATTACHED TO THE ENEMY OBJECT
             //Debug.Log("LeftLeg");
             collision.gameObject.GetComponent<Rigidbody>().AddForceAtPosition(rb.velocity.normalized * 60f, collision.transform.position, ForceMode.Impulse);  /*ADDS AN IMPULSE TO THE ENEMY RAGDOLL 
                                                                                                                                                                  AT THE POINT THE BULLET HITS THE ENEMY*/
